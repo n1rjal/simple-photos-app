@@ -14,6 +14,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.contrib import admin
 from django.urls import path, include
 from drf_yasg.views import get_schema_view
@@ -41,10 +42,8 @@ urlpatterns = [
         "api/v1/",
         include(
             [
-                #
-                #
-                #
-                # v1 urls
+                path("photos/", include("photo.urls"), name="photo app"),
+                path("albums/", include("album.urls"), name="album app"),
             ]
         ),
     ),

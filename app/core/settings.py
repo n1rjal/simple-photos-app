@@ -41,8 +41,13 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    # custom apps
+    "photo",
+    "album",
     # Third party apps
     "rest_framework",
+    "drf_yasg",
+    "django_filters",
     "corsheaders",
     "django_celery_beat",
     "django_celery_results",
@@ -153,3 +158,5 @@ CELERY_TASK_TIME_LIMIT = 60 * 60 * 2
 CELERY_BEAT_SCHEDULER = "django_celery_beat.schedulers:DatabaseScheduler"
 
 APP_NAME = "put_your_name-here"
+
+REST_FRAMEWORK = {"DEFAULT_PAGINATION_CLASS": "core.pagination.DjatePagePagination"}
